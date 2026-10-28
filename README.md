@@ -43,25 +43,11 @@ npm start
 
 Open `http://localhost:3000` in two browser windows or on two devices that can reach the computer running the server. Create a room in one window and join it from the other.
 
-## Deploy publicly
-
-The project includes a [Dockerfile](Dockerfile) for a container host that supports WebSockets. Route the host’s public HTTP(S) URL to the container port supplied through `PORT` (defaults to `3000`) and configure its health check to request `/healthz`.
-
-### Render setup
-
-The included [`render.yaml`](render.yaml) configures a Render web service using the Dockerfile and `/healthz` health check. To deploy it, put the project in a **private** GitHub repository, connect Render to that repository, and create a Blueprint from it. Render will build the service and provide an `onrender.com` URL. Keep the repository private; a public game URL does not require making the source repository public.
-
-The included configuration selects Render’s free plan for a demo. Free services sleep after 15 minutes without incoming traffic and can take about a minute to wake. Choose a paid always-on service if you need the game to respond immediately at all times.
-
-Room state and in-progress scores live in server memory. Use one server instance for rooms to remain shared between players. Restarting the server clears active rooms and scores. Finished match history is kept in each player’s browser storage.
-
 ## Project files
 
 - `server.js` — room management, level confirmation, sound generation, private answers, scoring, and match closeout
 - `public/index.html` — game interface, instructions, player display, and local finished-match history
 - `Dockerfile` — container deployment setup
-- `SUBMISSION_DESCRIPTION.md` — project summary for a submission form
 - `DEMO_SCRIPT.md` — walkthrough for presenting a match
-- `SUBMISSION_CHECKLIST.md` — final review and deployment checklist
 - `VERSION` — displayed project version
 - `LICENSE` — ownership and all-rights-reserved notice
