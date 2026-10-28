@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: prairie-pitch-multiplayer
+    runtime: docker
+    plan: free
+    healthCheckPath: /healthz

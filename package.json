@@ -1,0 +1,20 @@
+{
+  "name": "prairie-pitch-multiplayer",
+  "version": "1.2.1",
+  "private": true,
+  "description": "Two-player private-answer ear-training game",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "express": "5.3.0",
+    "socket.io": "4.8.4"
+  }
+}
+
+
+
